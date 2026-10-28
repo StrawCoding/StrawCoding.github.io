@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Redirecting…</title>
+  <script>
+    (function () {
+      var path = location.pathname.replace(/\/+$/, '') || '/';
+      var wikiPrefix = '/StrawMoneyBookWiki';
+      var wikiRoots = /^\/(operations|guide|architecture|domains|quick-start)(\/|$)/;
+      if (wikiRoots.test(path)) {
+        var normalized = path.replace(/\.html$/i, '');
+        location.replace(wikiPrefix + normalized + location.search + location.hash);
+        return;
+      }
+      if (path === '/404.html' || path === '/404') {
+        location.replace(wikiPrefix + '/');
+        return;
+      }
+      location.replace(wikiPrefix + '/');
+    })();
+  </script>
+  <meta http-equiv="refresh" content="0; url=/StrawMoneyBookWiki/">
+</head>
+<body>
+  <p>Redirecting to <a href="/StrawMoneyBookWiki/">StrawMoneyBook Wiki</a>…</p>
+</body>
+</html>
