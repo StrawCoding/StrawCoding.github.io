@@ -1,29 +1,43 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Redirecting…</title>
-  <script>
-    (function () {
-      var path = location.pathname.replace(/\/+$/, '') || '/';
-      var wikiPrefix = '/StrawMoneyBookWiki';
-      var wikiRoots = /^\/(operations|guide|architecture|domains|quick-start)(\/|$)/;
-      if (wikiRoots.test(path)) {
-        var normalized = path.replace(/\.html$/i, '');
-        location.replace(wikiPrefix + normalized + location.search + location.hash);
-        return;
-      }
-      if (path === '/404.html' || path === '/404') {
-        location.replace(wikiPrefix + '/');
-        return;
-      }
-      location.replace(wikiPrefix + '/');
-    })();
-  </script>
-  <meta http-equiv="refresh" content="0; url=/StrawMoneyBookWiki/">
+<html lang="zh-Hant" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>404 | Developer Guide</title>
+    <meta name="description" content="Not Found">
+    <meta name="generator" content="VitePress v1.6.4">
+    <link rel="preload stylesheet" href="/assets/style.7UNe3_zg.css" as="style">
+    <link rel="preload stylesheet" href="/vp-icons.css" as="style">
+    
+    <script type="module" src="/assets/app.C4oxsHEZ.js"></script>
+    <link rel="preload" href="/assets/inter-roman-latin.Di8DUHzh.woff2" as="font" type="font/woff2" crossorigin="">
+    <script id="check-dark-mode">(()=>{const e=localStorage.getItem("vitepress-theme-appearance")||"auto",a=window.matchMedia("(prefers-color-scheme: dark)").matches;(!e||e==="auto"?a:e==="dark")&&document.documentElement.classList.add("dark")})();</script>
+    <script id="check-mac-os">document.documentElement.classList.toggle("mac",/Mac|iPhone|iPod|iPad/i.test(navigator.platform));</script>
+  <script id="smb-wiki-legacy-redirect">(function(){try{
+  var p=(location.pathname||'').replace(/\/+$/,'')||'/';
+  if(/^\/StrawMoneyBookWiki(\/|$)/i.test(p)){
+    p=p.replace(/^\/StrawMoneyBookWiki/i,'')||'/';
+    location.replace(p+location.search+location.hash);
+    return;
+  }
+  var roots=['operations','guide','architecture','domains','quick-start'];
+  for(var i=0;i<roots.length;i++){
+    var r=roots[i];
+    var re=new RegExp('^/'+r+'(/|$)','i');
+    if(re.test(p)){
+      var rest=p.slice(r.length+1);
+      if(rest.charAt(0)==='/') rest=rest.slice(1);
+      rest=rest.replace(/\.html$/i,'').toLowerCase();
+      var target='/'+r+(rest?'/'+rest:'');
+      if(target!==p) location.replace(target+location.search+location.hash);
+      return;
+    }
+  }
+}catch(e){}})();</script>
 </head>
-<body>
-  <p>Redirecting to <a href="/StrawMoneyBookWiki/">StrawMoneyBook Wiki</a>…</p>
-</body>
+  <body>
+    <div id="app"></div>
+    <script>window.__VP_HASH_MAP__=JSON.parse("{\"architecture_application-layers.md\":\"CgR9XOHm\",\"architecture_ledger-lifecycle.md\":\"CcxXX2H7\",\"architecture_overview.md\":\"SAWkUI6W\",\"architecture_startup-and-runtime.md\":\"BP5clRCr\",\"domains_analysis-reports.md\":\"CBRDQ9qw\",\"domains_android-capacitor.md\":\"BtueDs6D\",\"domains_assets.md\":\"BHI_y_uT\",\"domains_bank-sync-einvoice.md\":\"DCM56cVG\",\"domains_bookkeeping.md\":\"Dcz1EQE6\",\"domains_budget.md\":\"B6BwF5sI\",\"domains_loans-reimbursements-claims.md\":\"CGlYGXaD\",\"domains_membership.md\":\"hRWI73Mi\",\"domains_sync-backup-shared-ledger.md\":\"BUR5g-Ks\",\"guide_authentication.md\":\"DO88H_Ar\",\"guide_backend-api.md\":\"0L67ETXg\",\"guide_data-model-and-storage.md\":\"CI5IWLP_\",\"guide_frontend-stack.md\":\"CzT-2QQa\",\"guide_index.md\":\"DpjXW36b\",\"index.md\":\"C8FStsUX\",\"operations_android-native-bank-apk.md\":\"DrWW5ClT\",\"operations_android-release-and-play-upload.md\":\"Btu0fZq-\",\"operations_auth-and-security-operations.md\":\"BHg2xi2-\",\"operations_backend-deployment-and-health.md\":\"C0ERdtKo\",\"operations_backups-and-restore.md\":\"BrLc53Sf\",\"operations_ci-cd-and-gates.md\":\"B750kS12\",\"operations_closeout-and-versioning.md\":\"BSt107ZE\",\"operations_environment-variables.md\":\"B9ovsejy\",\"operations_index.md\":\"D39Mkmqo\",\"operations_local-dev-quickstart.md\":\"CsEDR39_\",\"operations_long-task-worker.md\":\"BNfha-Vv\",\"operations_open-source-and-license.md\":\"BuweHnda\",\"operations_optimization-plan.md\":\"CEHbe_Vv\",\"operations_payroll-cycle-budget.md\":\"Dc826Ik7\",\"operations_playwright-app-shell.md\":\"CVjT92yw\",\"operations_release-process.md\":\"CmcTiGZr\",\"operations_sync-architecture-b.md\":\"MEm_kSO6\",\"operations_sync-operations-runbooks.md\":\"BSuYnVLl\",\"operations_technical-optimization.md\":\"CeeDfOcY\",\"operations_testing-and-verification.md\":\"CNgVwRe2\",\"operations_troubleshooting.md\":\"CcMQ51U_\",\"operations_wear-companion.md\":\"DXXXiXzc\",\"quick-start.md\":\"CH2Xo4Oj\"}");window.__VP_SITE_DATA__=JSON.parse("{\"lang\":\"zh-Hant\",\"dir\":\"ltr\",\"title\":\"StrawMoneyBook\",\"titleTemplate\":\":title | Developer Guide\",\"description\":\"StrawMoneyBook 官方開發者技術文件：架構、模組協作與功能域指南\",\"base\":\"/\",\"head\":[],\"router\":{\"prefetchLinks\":true},\"appearance\":true,\"themeConfig\":{\"nav\":[{\"text\":\"Guide\",\"link\":\"/guide/\"},{\"text\":\"Architecture\",\"link\":\"/architecture/overview\"},{\"text\":\"Domains\",\"link\":\"/domains/bookkeeping\"},{\"text\":\"Operations\",\"link\":\"/operations/\"},{\"text\":\"GitHub\",\"link\":\"https://github.com/StrawCoding/StrawMoneyBook\"}],\"sidebar\":[{\"text\":\"Introduction\",\"items\":[{\"text\":\"What is StrawMoneyBook?\",\"link\":\"/\"},{\"text\":\"Documentation Hub\",\"link\":\"/guide/\"},{\"text\":\"Quick Start\",\"link\":\"/quick-start\"},{\"text\":\"Open Source & License\",\"link\":\"/operations/open-source-and-license\"}]},{\"text\":\"Architecture\",\"items\":[{\"text\":\"Overview\",\"link\":\"/architecture/overview\"},{\"text\":\"Application Layers\",\"link\":\"/architecture/application-layers\"},{\"text\":\"Startup & Runtime\",\"link\":\"/architecture/startup-and-runtime\"},{\"text\":\"Ledger Lifecycle\",\"link\":\"/architecture/ledger-lifecycle\"}]},{\"text\":\"Core Guide\",\"items\":[{\"text\":\"Data Model & Storage\",\"link\":\"/guide/data-model-and-storage\"},{\"text\":\"Frontend Stack\",\"link\":\"/guide/frontend-stack\"},{\"text\":\"Backend API\",\"link\":\"/guide/backend-api\"},{\"text\":\"Authentication\",\"link\":\"/guide/authentication\"}]},{\"text\":\"Feature Domains\",\"items\":[{\"text\":\"Bookkeeping\",\"link\":\"/domains/bookkeeping\"},{\"text\":\"Budget\",\"link\":\"/domains/budget\"},{\"text\":\"Assets\",\"link\":\"/domains/assets\"},{\"text\":\"Loans, Reimbursements & Claims\",\"link\":\"/domains/loans-reimbursements-claims\"},{\"text\":\"Analysis & Reports\",\"link\":\"/domains/analysis-reports\"},{\"text\":\"Sync, Backup & Shared Ledger\",\"link\":\"/domains/sync-backup-shared-ledger\"},{\"text\":\"Membership\",\"link\":\"/domains/membership\"},{\"text\":\"Bank Sync & E-Invoice\",\"link\":\"/domains/bank-sync-einvoice\"},{\"text\":\"Android & Capacitor\",\"link\":\"/domains/android-capacitor\"}]},{\"text\":\"Operations\",\"items\":[{\"text\":\"Home\",\"link\":\"/operations/\"},{\"text\":\"Open Source & License\",\"link\":\"/operations/open-source-and-license\"},{\"text\":\"Optimization Plan\",\"link\":\"/operations/optimization-plan\"},{\"text\":\"Local Dev\",\"link\":\"/operations/local-dev-quickstart\"},{\"text\":\"Environment Variables\",\"link\":\"/operations/environment-variables\"},{\"text\":\"Closeout & Versioning\",\"link\":\"/operations/closeout-and-versioning\"},{\"text\":\"Long-Task Worker\",\"link\":\"/operations/long-task-worker\"},{\"text\":\"Playwright App Shell\",\"link\":\"/operations/playwright-app-shell\"},{\"text\":\"Testing\",\"link\":\"/operations/testing-and-verification\"},{\"text\":\"CI / CD Gates\",\"link\":\"/operations/ci-cd-and-gates\"},{\"text\":\"Release Process\",\"link\":\"/operations/release-process\"},{\"text\":\"Android Play Upload\",\"link\":\"/operations/android-release-and-play-upload\"},{\"text\":\"Native Bank APK\",\"link\":\"/operations/android-native-bank-apk\"},{\"text\":\"Payroll Cycle Budget\",\"link\":\"/operations/payroll-cycle-budget\"},{\"text\":\"Wear Companion\",\"link\":\"/operations/wear-companion\"},{\"text\":\"Sync Architecture B\",\"link\":\"/operations/sync-architecture-b\"},{\"text\":\"Sync Runbooks\",\"link\":\"/operations/sync-operations-runbooks\"},{\"text\":\"Backend Deploy\",\"link\":\"/operations/backend-deployment-and-health\"},{\"text\":\"Backups & Restore\",\"link\":\"/operations/backups-and-restore\"},{\"text\":\"Auth & Security\",\"link\":\"/operations/auth-and-security-operations\"},{\"text\":\"Troubleshooting\",\"link\":\"/operations/troubleshooting\"},{\"text\":\"Technical Optimization\",\"link\":\"/operations/technical-optimization\"}]}],\"socialLinks\":[{\"icon\":\"github\",\"link\":\"https://github.com/StrawCoding/StrawMoneyBookWiki\"}],\"footer\":{\"message\":\"StrawMoneyBook Developer Guide\",\"copyright\":\"Copyright © StrawCoding\"},\"search\":{\"provider\":\"local\"}},\"locales\":{},\"scrollOffset\":134,\"cleanUrls\":false}");</script>
+    
+  </body>
 </html>
